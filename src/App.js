@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import React ,{ useState } from 'react'
+import {BrowserRouter,Link,Route} from 'react-router-dom'
+import NewFolder from './Newfolder'
+import Folder from './folder/folder'
 import './App.css';
-
+import Bread from './breadcrumb'
+export const Breadcontext = React.createContext({
+  bread:['/'],
+  setbread:()=>{}
+});
 function App() {
+const [bread,setbread] = useState (['/']);
+
+const value ={bread,setbread};
+
+
+  let links =[<Link to="/">/Home</Link>];
+
+  links.push(<Link to= {`/${bread[1]}`} >/{bread[1]}</Link>)
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter >
+    <React.Fragment>
+
+  <Bread>{links}</Bread>
+  <Breadcontext.Provider value={value}>
+     <Route path='/' exact component={NewFolder}/>
+     <Route path='/:fid' component={Folder}/>
+  </Breadcontext.Provider>
+
+
+   </React.Fragment>
+   </BrowserRouter>
   );
 }
 

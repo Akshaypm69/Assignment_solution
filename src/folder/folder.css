@@ -1,0 +1,67 @@
+.folder-page{
+    margin:0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width:auto;
+   
+    box-sizing: border-box;
+}
+.creatorbox{
+    border-radius: 8px;
+    position: absolute;
+    height: 200px;
+    width: 400px;
+    left:20px;
+    top:20px;
+    background-color: aliceblue;
+    border: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.folder-display{
+    position: absolute;
+    left: 10px;
+    margin-left: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width:1000px;
+
+}
+.folderparticle{
+    position: relative;
+    height:50px;
+    width:150px;
+    background-color: aliceblue;
+    border: black;
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: auto;
+    box-shadow: inset;
+    box-shadow: 5px 5px rgba(0,0,0,.2);
+
+
+}
+.edit{
+    background-color: aliceblue;
+    border-radius: 8px;
+    position: absolute;
+    height:50px;
+    width: 70px;
+    left:400px;
+    top:400px
+}
